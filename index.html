@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/8616114089.js" crossorigin="anonymous"></script>
+  <title>Weather App</title>
+</head>
+<body>
+  <div class="container">
+    <div id="hometown" class="weather">
+      <h1 id="location-home" class="location">lorem</h1>
+      <img id="icon-home" class="icon">
+      <hr>
+      <ul class="details">
+        <li class="list-item" id="temperature-home">lorem</li>
+        <li class="list-item" id="pressure-home">lorem</li>
+        <li class="list-item" id="humidity-home">lorem</li>
+        <li class="list-item" id="uv-index-home">lorem</li>
+      </ul>
+      <hr>
+      <form id="changeLocationHome" class="changeLocation">
+        <input type="text" id="inputHome" placeholder="Change home location..."/>
+        <button id="btn-home" class="search-btn" type="submit"><i class="fas fa-search-location"></i></button>
+      </form>
+    </div>
+
+    <div id="workplace" class="weather">
+      <h1 id="location-work" class="location">lorem</h1>
+      <img id="icon-work" class="icon">
+      <hr>
+      <ul class="details">
+        <li class="list-item" id="temperature-work">lorem</li>
+        <li class="list-item" id="pressure-work">lorem</li>
+        <li class="list-item" id="humidity-work">lorem</li>
+        <li class="list-item" id="uv-index-work">lorem</li>
+      </ul>
+      <hr>
+      <form id="changeLocationWork" class="changeLocation">
+        <input type="text" id="inputWork" placeholder="Change work location..."/>
+        <button id="btn-work" class="search-btn" type="submit"><i class="fas fa-search-location"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <script src="storage.js"></script>
+  <script src="weather.js"></script>
+  <script src="show_weather.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
