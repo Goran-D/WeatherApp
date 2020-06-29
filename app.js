@@ -1,16 +1,26 @@
+// Initialize local storage
+const locStorage = new LocStorage();
+
+// 
+const weatherLocation = locStorage.getLocStorage();
+
+
 // Initialize weather object for hometown
-const weatherHome = new Weather('Varazdin');
+const weatherHome = new Weather(weatherLocation.home);
 
 // Initialize weather object for workplace
-const weatherWork = new Weather('Zagreb');
+const weatherWork = new Weather(weatherLocation.work);
 
-// Initialize UI
+// Initialize user interface
 const showWeatherHome = new ShowWeather('home');
 const showWeatherWork = new ShowWeather('work');
 
 // Get weather on DOM load
 document.addEventListener('DOMContentLoaded', getWeatherHome);
 document.addEventListener('DOMContentLoaded', getWeatherWork);
+
+// !!!!!!!!!!!!!!!!!
+
 
 function getWeatherHome() {
   weatherHome.getWeather()
@@ -39,6 +49,11 @@ function changeHome(e) {
   const newHome = document.getElementById('inputHome').value;
 
   weatherHome.changeLocation(newHome);
+
+  // Save home location in local storage
+  let currentWork = document.getElementById('location-work').textContent;
+  locStorage.setLocStorage(newHome, currentWork);
+
   getWeatherHome();
 
   document.getElementById('inputHome').value = '';
@@ -53,6 +68,11 @@ function changeWork(e) {
   const newWork = document.getElementById('inputWork').value;
 
   weatherWork.changeLocation(newWork);
+
+  // Save work location in local storage
+  let currentHome = document.getElementById('location-home').textContent;
+  locStorage.setLocStorage(currentHome, newWork);
+
   getWeatherWork();
 
   document.getElementById('inputWork').value = '';
