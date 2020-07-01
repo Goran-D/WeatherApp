@@ -1,9 +1,8 @@
 // Initialize local storage
 const locStorage = new LocStorage();
 
-// 
+// Get stored cities from local storage
 const weatherLocation = locStorage.getLocStorage();
-
 
 // Initialize weather object for hometown
 const weatherHome = new Weather(weatherLocation.home);
@@ -18,9 +17,6 @@ const showWeatherWork = new ShowWeather('work');
 // Get weather on DOM load
 document.addEventListener('DOMContentLoaded', getWeatherHome);
 document.addEventListener('DOMContentLoaded', getWeatherWork);
-
-// !!!!!!!!!!!!!!!!!
-
 
 function getWeatherHome() {
   weatherHome.getWeather()
